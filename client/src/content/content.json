@@ -1,0 +1,154 @@
+{
+  "name": "Yar Muhammad",
+  "role": "Software Engineer & Automation Specialist",
+  "tagline": "I build cross-platform mobile apps and intelligent automation workflows.",
+  "location": "Rawalpindi, Pakistan",
+  "email": "myar8114@gmail.com",
+  "socials": [
+    {"label":"LinkedIn","url":"https://www.linkedin.com/in/yar-muhammad-90386322a/"},
+    {"label":"GitHub","url":"https://github.com/"},
+    {"label":"Email","url":"mailto:myar8114@gmail.com"}
+  ],
+  "skills": [
+    {"name":"React Native","icon":"react","group":"frontend"},
+    {"name":"Redux","icon":"redux","group":"frontend"},
+    {"name":"JavaScript","icon":"javascript","group":"frontend"},
+    {"name":"Python","icon":"python","group":"backend"},
+    {"name":"C++","icon":"cplusplus","group":"backend"},
+    {"name":"REST APIs","icon":"api","group":"backend"},
+    {"name":"Docker","icon":"docker","group":"tools"},
+    {"name":"Git","icon":"git","group":"tools"},
+    {"name":"Android Studio","icon":"android","group":"tools"},
+    {"name":"Airtable","icon":"database","group":"tools"},
+    {"name":"n8n","icon":"workflow","group":"automation"},
+    {"name":"Make (Integromat)","icon":"workflow","group":"automation"},
+    {"name":"GPT-4","icon":"ai","group":"ai"},
+    {"name":"VAPI.AI","icon":"ai","group":"ai"},
+    {"name":"Go High Level","icon":"workflow","group":"crm"},
+    {"name":"Dolibarr CRM","icon":"database","group":"crm"}
+  ],
+  "experience": [
+    {
+      "company":"MiniByte AI",
+      "role":"Software Engineer Intern",
+      "start":"2024-07",
+      "end":"Present",
+      "bullets":[
+        "Developed and maintained cross-platform mobile apps for healthcare, eCommerce, and productivity.",
+        "Integrated GPT-4 and VAPI.AI to build intelligent voice assistants for real-time call handling.",
+        "Built automation workflows using n8n and Make (Integromat) for CRM/API integrations.",
+        "Implemented image processing automation using Python."
+      ],
+      "tech":["React Native","GPT-4","VAPI.AI","Python","n8n","Make","REST APIs","Dolibarr CRM"]
+    }
+  ],
+  "education": [
+    {
+      "degree":"Bachelors - Software Engineering",
+      "institution":"International Islamic University Islamabad",
+      "start":"2022-09",
+      "end":"Present"
+    },
+    {
+      "degree":"F.Sc (Pre-Medical)",
+      "institution":"FG Quaid e Azam Degree College Chaklala Rawalpindi",
+      "start":"2019-07",
+      "end":"2021-06"
+    }
+  ],
+  "projects": [
+    {
+      "title":"EyeScan App",
+      "summary":"Image capture app with watermark/logo overlay, sharing, and email functionality.",
+      "description": "A comprehensive image capture application designed for healthcare imaging solutions with advanced watermark and logo overlay capabilities.",
+      "features": [
+        "Real-time image capture with camera integration",
+        "Dynamic watermark and logo overlay system",
+        "Email functionality for instant sharing",
+        "Image processing with Python Pillow library",
+        "Healthcare-compliant image handling"
+      ],
+      "challenges": "Implementing real-time image processing while maintaining app performance.",
+      "solution": "Optimized image processing pipeline using Python backend services.",
+      "links":{},
+      "tech":["React Native","Python (Pillow)"],
+      "tags":["mobile","healthcare","imaging"]
+    },
+    {
+      "title":"VAPI Voice Assistant",
+      "summary":"Voice assistant for smart scheduling using GPT-4 + VAPI.AI.",
+      "description": "An intelligent voice assistant system that leverages GPT-4 and VAPI.AI for natural language processing and smart scheduling capabilities.",
+      "features": [
+        "Natural language processing with GPT-4",
+        "Real-time voice interaction via VAPI.AI",
+        "Smart scheduling and appointment management",
+        "Context-aware conversation handling",
+        "Integration with calendar systems"
+      ],
+      "challenges": "Creating seamless voice interactions with minimal latency.",
+      "solution": "Implemented efficient API caching and optimized voice processing pipeline.",
+      "links":{},
+      "tech":["React Native","GPT-4","VAPI.AI"],
+      "tags":["AI","automation","voice"]
+    },
+    {
+      "title":"Dolibarr External Form",
+      "summary":"Custom UI external form with Dolibarr CRM integration.",
+      "description": "A custom UI external form with seamless Dolibarr CRM integration for enhanced customer data collection and management.",
+      "features": [
+        "Custom form builder interface",
+        "Real-time data validation",
+        "Seamless CRM integration",
+        "Multi-step form workflows",
+        "Advanced data mapping"
+      ],
+      "challenges": "Ensuring data consistency between external forms and CRM system.",
+      "solution": "Implemented robust API integration with comprehensive error handling.",
+      "links":{},
+      "tech":["React","Dolibarr CRM","REST APIs"],
+      "tags":["crm","integration","web"]
+    },
+    {
+      "title":"Les Femmes App",
+      "summary":"Feature development for product creation and draft continuation.",
+      "description": "Enhanced mobile application features for product creation workflows and draft management functionality.",
+      "features": [
+        "Intuitive product creation interface",
+        "Draft saving and continuation",
+        "Multi-media product galleries",
+        "Advanced search and filtering",
+        "User preference management"
+      ],
+      "challenges": "Maintaining data integrity across draft sessions.",
+      "solution": "Implemented local storage with cloud synchronization for seamless experience.",
+      "links":{},
+      "tech":["React Native"],
+      "tags":["mobile","ecommerce"]
+    },
+    {
+      "title":"eCommerce Platform",
+      "summary":"React Native interface enhancements with backend product workflow integration.",
+      "description": "Comprehensive eCommerce platform enhancements focusing on user experience and backend integration for improved product workflow management.",
+      "features": [
+        "Enhanced product browsing interface",
+        "Streamlined checkout process",
+        "Real-time inventory tracking",
+        "Advanced search capabilities",
+        "User account management"
+      ],
+      "challenges": "Optimizing performance for large product catalogs.",
+      "solution": "Implemented efficient pagination and caching strategies.",
+      "links":{},
+      "tech":["React Native","Backend APIs"],
+      "tags":["ecommerce","mobile"]
+    }
+  ],
+  "certifications": [
+    {"title":"Meta React Native","issuer":"Coursera"}
+  ],
+  "languages":[
+    {"name":"English","level":"Fluent"},
+    {"name":"Urdu","level":"Fluent"},
+    {"name":"Pashto","level":"Native"}
+  ]
+}
