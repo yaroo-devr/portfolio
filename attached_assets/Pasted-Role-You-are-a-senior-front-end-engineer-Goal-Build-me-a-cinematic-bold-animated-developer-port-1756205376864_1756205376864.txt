@@ -1,0 +1,211 @@
+Role: You are a senior front-end engineer.
+Goal: Build me a cinematic, bold, animated developer portfolio that runs perfectly on Replit with zero setup. My CV content (JSON) is already included below.
+
+🔧 Tech Stack
+
+React + Vite + Tailwind CSS + Framer Motion for layout & motion
+
+Lenis for smooth scrolling
+
+Devicon for tech stack icons
+
+Lucide for UI icons
+
+🎨 Design Direction
+
+Cinematic, dark theme with bold typography and cinematic transitions.
+
+Hero section: split-screen layout with parallax layers, particle/grain background, bold tagline, magnetic CTA buttons.
+
+Sections animate in with scroll reveals (Framer Motion stagger).
+
+Project cards with hover video preview + modal detail view.
+
+Skills grid with Devicon icons, hover effects, filter by category (Frontend / Backend / Tools / Automation / AI / CRM).
+
+Sticky nav bar with scroll progress indicator.
+
+Smooth parallax hero + section transitions.
+
+📄 Sections
+
+Hero (name, role, tagline, CTA buttons).
+
+About (short summary + highlights).
+
+Skills (grid with Devicon icons + tooltips).
+
+Experience (animated timeline).
+
+Projects (hover video preview + modals).
+
+Education (animated cards).
+
+Certifications & Languages.
+
+Contact (email, social links).
+
+Footer (minimal, social icons, back-to-top).
+
+📂 File Structure
+/public
+  /projects  (sample images/videos)
+  /og.jpg
+/src
+  /components  (Hero, Section, Nav, SkillCard, ProjectCard, Timeline, Modal, Cursor, ProgressBar)
+  /sections    (Hero.tsx, About.tsx, Skills.tsx, Experience.tsx, Projects.tsx, Education.tsx, Contact.tsx)
+  /content     (content.json, content.ts for types)
+  /styles      (global.css, noise.png as data-url)
+  main.tsx, App.tsx
+index.html
+tailwind.config.js
+postcss.config.js
+vite.config.ts
+README.md
+
+📜 Content JSON (from my CV)
+
+Use this in /src/content/content.json:
+
+{
+  "name": "Yar Muhammad",
+  "role": "React Native Developer & Automation Engineer",
+  "tagline": "I build cross-platform mobile apps and intelligent automation workflows.",
+  "location": "Rawalpindi, Pakistan",
+  "email": "myar8114@gmail.com",
+  "socials": [
+    {"label":"LinkedIn","url":"https://www.linkedin.com/in/yar-muhammad-90386322a/"},
+    {"label":"GitHub","url":"https://github.com/"},
+    {"label":"Email","url":"mailto:myar8114@gmail.com"}
+  ],
+  "skills": [
+    {"name":"React Native","icon":"react","group":"frontend"},
+    {"name":"Redux","icon":"redux","group":"frontend"},
+    {"name":"Python","icon":"python","group":"backend"},
+    {"name":"JavaScript","icon":"javascript","group":"frontend"},
+    {"name":"C++","icon":"cplusplus","group":"backend"},
+    {"name":"Docker","icon":"docker","group":"tools"},
+    {"name":"Git","icon":"git","group":"tools"},
+    {"name":"n8n","icon":"workflow","group":"automation"},
+    {"name":"Make (Integromat)","icon":"workflow","group":"automation"},
+    {"name":"Go High Level","icon":"workflow","group":"crm"},
+    {"name":"Airtable","icon":"database","group":"tools"},
+    {"name":"Dolibarr CRM","icon":"database","group":"crm"},
+    {"name":"REST APIs","icon":"api","group":"backend"},
+    {"name":"Android Studio","icon":"android","group":"tools"},
+    {"name":"GPT-4","icon":"ai","group":"ai"},
+    {"name":"VAPI.AI","icon":"ai","group":"ai"}
+  ],
+  "experience": [
+    {
+      "company":"MiniByte AI",
+      "role":"React Native Developer Intern",
+      "start":"2024-07",
+      "end":"Present",
+      "bullets":[
+        "Developed and maintained cross-platform mobile apps for healthcare, eCommerce, and productivity.",
+        "Integrated GPT-4 and VAPI.AI to build intelligent voice assistants for real-time call handling.",
+        "Built automation workflows using n8n and Make (Integromat) for CRM/API integrations.",
+        "Implemented image processing automation using Python."
+      ],
+      "tech":["React Native","GPT-4","VAPI.AI","Python","n8n","Make","REST APIs","Dolibarr CRM"]
+    }
+  ],
+  "education": [
+    {
+      "degree":"Bachelors - Software Engineering",
+      "institution":"International Islamic University Islamabad",
+      "start":"2022-09",
+      "end":"Present"
+    },
+    {
+      "degree":"F.Sc (Pre-Medical)",
+      "institution":"FG Quaid e Azam Degree College Chaklala Rawalpindi",
+      "start":"2019-07",
+      "end":"2021-06"
+    }
+  ],
+  "projects": [
+    {
+      "title":"EyeScan App",
+      "summary":"Image capture app with watermark/logo overlay, sharing, and email functionality.",
+      "links":{},
+      "tech":["React Native","Python (Pillow)"],
+      "tags":["mobile","healthcare","imaging"]
+    },
+    {
+      "title":"VAPI Voice Assistant",
+      "summary":"Voice assistant for smart scheduling using GPT-4 + VAPI.AI.",
+      "links":{},
+      "tech":["React Native","GPT-4","VAPI.AI"],
+      "tags":["AI","automation","voice"]
+    },
+    {
+      "title":"Dolibarr External Form",
+      "summary":"Custom UI external form with Dolibarr CRM integration.",
+      "links":{},
+      "tech":["React","Dolibarr CRM","REST APIs"],
+      "tags":["crm","integration","web"]
+    },
+    {
+      "title":"Les Femmes App",
+      "summary":"Feature development for product creation and draft continuation.",
+      "links":{},
+      "tech":["React Native"],
+      "tags":["mobile","ecommerce"]
+    },
+    {
+      "title":"eCommerce Platform",
+      "summary":"React Native interface enhancements with backend product workflow integration.",
+      "links":{},
+      "tech":["React Native","Backend APIs"],
+      "tags":["ecommerce","mobile"]
+    }
+  ],
+  "certifications": [
+    {"title":"Meta React Native","issuer":"Coursera"}
+  ],
+  "languages":[
+    {"name":"English","level":"Fluent"},
+    {"name":"Urdu","level":"Fluent"},
+    {"name":"Pashto","level":"Native"}
+  ]
+}
+
+🛠 Implementation Musts
+
+Load content dynamically from content.json.
+
+Use Framer Motion for cinematic page-load + scroll animations.
+
+Use Devicon for stack icons.
+
+Projects must support hover video previews + modal detail view.
+
+Skills grid must support filtering (Frontend / Backend / Tools / Automation / AI / CRM).
+
+SEO-ready (title/meta/og tags).
+
+Accessibility (keyboard focus, aria labels, prefers-reduced-motion fallback).
+
+📦 Commands
+
+npm install
+
+npm run dev → starts server in Replit
+
+npm run build → production build
+
+Acceptance Criteria
+
+Builds & runs on Replit with no edits.
+
+Cinematic hero with parallax + bold typography.
+
+Smooth scrolling + progress bar.
+
+Dynamic skills, projects, and experience from content.json.
+
+Lighthouse 90+ (Perf, SEO, A11y, Best Practices).
+
+👉 Generate the full project now with this JSON and design.
