@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-space via-charcoal to-space" />
       
       {/* Split Screen Layout */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-20 lg:py-0">
         {/* Left Content */}
         <motion.div 
           className="space-y-8"
@@ -55,7 +55,7 @@ export default function Hero() {
             </motion.p>
             
             <motion.h1 
-              className="text-6xl md:text-7xl lg:text-8xl font-black leading-none"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-none"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -73,10 +73,10 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-300">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-300">
               {role}
             </h2>
-            <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-400 max-w-lg leading-relaxed">
               {tagline}
             </p>
           </motion.div>
@@ -88,14 +88,14 @@ export default function Hero() {
             transition={{ delay: 1.0 }}
           >
             <button 
-              className="magnetic-btn bg-gradient-to-r from-electric to-neon text-space font-semibold px-8 py-4 rounded-full"
+              className="magnetic-btn bg-gradient-to-r from-electric to-neon text-space font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full text-sm md:text-base"
               onClick={handleViewWork}
               data-testid="button-view-work"
             >
               View My Work
             </button>
             <button 
-              className="magnetic-btn border-2 border-electric text-electric font-semibold px-8 py-4 rounded-full hover:bg-electric hover:text-space transition-all duration-300"
+              className="magnetic-btn border-2 border-electric text-electric font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-electric hover:text-space transition-all duration-300 text-sm md:text-base"
               onClick={handleDownloadCV}
               data-testid="button-download-cv"
             >
@@ -127,27 +127,27 @@ export default function Hero() {
         
         {/* Right Visual */}
         <motion.div 
-          className="relative"
+          className="relative order-first lg:order-last"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="relative w-full max-w-md mx-auto">
-            {/* Floating Elements */}
+            {/* Floating Elements - Hidden on mobile to avoid blur interference */}
             <motion.div 
-              className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-electric/20 to-neon/20 rounded-full blur-xl"
+              className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-electric/20 to-neon/20 rounded-full blur-xl hidden md:block"
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
             <motion.div 
-              className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-neon/20 to-electric/20 rounded-full blur-xl"
+              className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-neon/20 to-electric/20 rounded-full blur-xl hidden md:block"
               animate={{ y: [0, -20, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
             />
             
             {/* Code Block Mockup */}
             <motion.div 
-              className="bg-charcoal/80 backdrop-blur-md border border-gray-700 rounded-2xl p-6 shadow-2xl"
+              className="bg-charcoal/80 backdrop-blur-md border border-gray-700 rounded-2xl p-4 md:p-6 shadow-2xl mt-8 lg:mt-0"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -156,7 +156,7 @@ export default function Hero() {
                 <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                 <div className="w-3 h-3 bg-green-500 rounded-full" />
               </div>
-              <div className="font-mono text-sm space-y-2">
+              <div className="font-mono text-xs sm:text-sm space-y-2">
                 <div className="text-gray-400">// Building the future</div>
                 <div className="text-electric">const developer = {`{`}</div>
                 <div className="ml-4 text-white">name: <span className="text-green-400">"{name}"</span>,</div>
