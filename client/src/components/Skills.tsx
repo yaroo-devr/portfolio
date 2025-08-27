@@ -8,7 +8,12 @@ import {
   Brain, 
   Mic, 
   Users, 
-  Building 
+  Building,
+  Code,
+  Terminal,
+  Smartphone,
+  GitBranch,
+  Play
 } from "lucide-react";
 import contentData from "../content/content.json";
 
@@ -35,19 +40,17 @@ export default function Skills() {
       case "redux":
         return <i className="devicon-redux-original text-4xl text-purple-400 mb-4 block" />;
       case "javascript":
-        return <i className="devicon-javascript-original text-4xl text-yellow-400 mb-4 block" />;
+        return <Code {...iconProps} className="w-10 h-10 text-yellow-400 mb-4 mx-auto" />;
       case "python":
-        return <i className="devicon-python-original text-4xl text-blue-500 mb-4 block" />;
+        return <Terminal {...iconProps} className="w-10 h-10 text-blue-500 mb-4 mx-auto" />;
       case "cplusplus":
-        return <i className="devicon-cplusplus-original text-4xl text-blue-600 mb-4 block" />;
-      case "docker":
-        return <i className="devicon-docker-original text-4xl text-blue-500 mb-4 block" />;
+        return <Code {...iconProps} className="w-10 h-10 text-blue-600 mb-4 mx-auto" />;
       case "git":
-        return <i className="devicon-git-original text-4xl text-red-500 mb-4 block" />;
+        return <GitBranch {...iconProps} className="w-10 h-10 text-red-500 mb-4 mx-auto" />;
       case "android":
-        return <i className="devicon-android-original text-4xl text-green-500 mb-4 block" />;
+        return <Smartphone {...iconProps} className="w-10 h-10 text-green-500 mb-4 mx-auto" />;
       case "nodejs":
-        return <i className="devicon-nodejs-original text-4xl text-green-500 mb-4 block" />;
+        return <Server {...iconProps} className="w-10 h-10 text-green-500 mb-4 mx-auto" />;
       case "api":
         return <Server {...iconProps} className="w-10 h-10 text-green-400 mb-4 mx-auto" />;
       case "database":
