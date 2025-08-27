@@ -16,7 +16,6 @@
     {"name":"Python","icon":"python","group":"backend"},
     {"name":"C++","icon":"cplusplus","group":"backend"},
     {"name":"REST APIs","icon":"api","group":"backend"},
-    {"name":"Docker","icon":"docker","group":"tools"},
     {"name":"Git","icon":"git","group":"tools"},
     {"name":"Android Studio","icon":"android","group":"tools"},
     {"name":"Airtable","icon":"database","group":"tools"},
@@ -24,8 +23,7 @@
     {"name":"Make (Integromat)","icon":"workflow","group":"automation"},
     {"name":"GPT-4","icon":"ai","group":"ai"},
     {"name":"VAPI.AI","icon":"ai","group":"ai"},
-    {"name":"Go High Level","icon":"workflow","group":"crm"},
-    {"name":"Dolibarr CRM","icon":"database","group":"crm"}
+    {"name":"Go High Level","icon":"workflow","group":"crm"}
   ],
   "experience": [
     {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
   Database, 
   Server, 
@@ -163,28 +163,25 @@ export default function Skills() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <AnimatePresence mode="wait">
-            {filteredSkills.map((skill, index) => (
-              <motion.div
-                key={`${skill.name}-${activeFilter}`}
-                className={`skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 ${getHoverColor(skill.group)}`}
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                whileHover={{ 
-                  scale: 1.02,
-                  y: -8,
-                  boxShadow: "0 25px 50px rgba(0, 212, 255, 0.2)"
-                }}
-                data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
-              >
-                {getSkillIcon(skill.icon, skill.name)}
-                <h3 className="font-semibold text-white text-sm">{skill.name}</h3>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {filteredSkills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              className={`skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 ${getHoverColor(skill.group)}`}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              whileHover={{ 
+                scale: 1.02,
+                y: -8,
+                boxShadow: "0 25px 50px rgba(0, 212, 255, 0.2)"
+              }}
+              data-testid={`skill-${skill.name.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              {getSkillIcon(skill.icon, skill.name)}
+              <h3 className="font-semibold text-white text-sm">{skill.name}</h3>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
