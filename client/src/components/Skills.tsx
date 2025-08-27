@@ -46,6 +46,8 @@ export default function Skills() {
         return <i className="devicon-git-original text-4xl text-red-500 mb-4 block" />;
       case "android":
         return <i className="devicon-android-original text-4xl text-green-500 mb-4 block" />;
+      case "nodejs":
+        return <i className="devicon-nodejs-original text-4xl text-green-500 mb-4 block" />;
       case "api":
         return <Server {...iconProps} className="w-10 h-10 text-green-400 mb-4 mx-auto" />;
       case "database":
@@ -161,13 +163,16 @@ export default function Skills() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill) => (
+          <AnimatePresence mode="wait">
+            {filteredSkills.map((skill, index) => (
               <motion.div
-                key={skill.name}
+                key={`${skill.name}-${activeFilter}`}
                 className={`skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 ${getHoverColor(skill.group)}`}
                 variants={itemVariants}
-                layout
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{ duration: 0.3, delay: index * 0.05 }}
                 whileHover={{ 
                   scale: 1.02,
                   y: -8,

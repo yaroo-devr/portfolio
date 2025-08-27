@@ -18,10 +18,13 @@ export default function Projects() {
     if (title.includes("VAPI")) {
       return <Mic {...iconProps} className="w-16 h-16 text-neon" />;
     }
-    if (title.includes("Dolibarr")) {
-      return <Building {...iconProps} className="w-16 h-16 text-orange-400" />;
+    if (title.includes("Calculator")) {
+      return <i className="devicon-javascript-original text-6xl text-yellow-400" />;
     }
-    if (title.includes("eCommerce") || title.includes("Les Femmes")) {
+    if (title.includes("n8n") || title.includes("Multi-Agent")) {
+      return <i className="devicon-nodejs-original text-6xl text-green-400" />;
+    }
+    if (title.includes("Les Femmes")) {
       return <ShoppingBag {...iconProps} className="w-16 h-16 text-pink-400" />;
     }
     return <Eye {...iconProps} className="w-16 h-16 text-electric" />;
@@ -34,10 +37,13 @@ export default function Projects() {
     if (title.includes("VAPI")) {
       return "from-green-900/30 to-blue-900/30";
     }
-    if (title.includes("Dolibarr")) {
-      return "from-red-900/30 to-orange-900/30";
+    if (title.includes("Calculator")) {
+      return "from-yellow-900/30 to-orange-900/30";
     }
-    if (title.includes("eCommerce") || title.includes("Les Femmes")) {
+    if (title.includes("n8n") || title.includes("Multi-Agent")) {
+      return "from-green-900/30 to-purple-900/30";
+    }
+    if (title.includes("Les Femmes")) {
       return "from-purple-900/30 to-pink-900/30";
     }
     return "from-blue-900/30 to-purple-900/30";
@@ -50,10 +56,13 @@ export default function Projects() {
     if (title.includes("VAPI")) {
       return "hover:border-electric";
     }
-    if (title.includes("Dolibarr")) {
-      return "hover:border-neon";
+    if (title.includes("Calculator")) {
+      return "hover:border-yellow-400";
     }
-    if (title.includes("eCommerce") || title.includes("Les Femmes")) {
+    if (title.includes("n8n") || title.includes("Multi-Agent")) {
+      return "hover:border-green-400";
+    }
+    if (title.includes("Les Femmes")) {
       return "hover:border-electric";
     }
     return "hover:border-neon";

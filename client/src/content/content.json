@@ -92,21 +92,40 @@
       "tags":["AI","automation","voice"]
     },
     {
-      "title":"Dolibarr External Form",
-      "summary":"Custom UI external form with Dolibarr CRM integration.",
-      "description": "A custom UI external form with seamless Dolibarr CRM integration for enhanced customer data collection and management.",
+      "title":"React Native Calculator",
+      "summary":"Advanced mobile calculator app with scientific functions and history tracking.",
+      "description": "A feature-rich calculator application built with React Native featuring scientific calculations, operation history, and responsive design.",
       "features": [
-        "Custom form builder interface",
-        "Real-time data validation",
-        "Seamless CRM integration",
-        "Multi-step form workflows",
-        "Advanced data mapping"
+        "Basic arithmetic operations with precision handling",
+        "Scientific functions (trigonometry, logarithms, exponents)",
+        "Calculation history with save/load functionality",
+        "Memory operations and variable storage",
+        "Responsive design for multiple screen sizes",
+        "Dark/light theme support"
       ],
-      "challenges": "Ensuring data consistency between external forms and CRM system.",
-      "solution": "Implemented robust API integration with comprehensive error handling.",
+      "challenges": "Ensuring calculation precision and handling complex mathematical operations.",
+      "solution": "Implemented high-precision arithmetic library and comprehensive error handling.",
       "links":{},
-      "tech":["React","Dolibarr CRM","REST APIs"],
-      "tags":["crm","integration","web"]
+      "tech":["React Native","JavaScript","AsyncStorage"],
+      "tags":["mobile","utility","mathematics"]
+    },
+    {
+      "title":"Multi-Agent n8n Workflows",
+      "summary":"Complex automation workflows using multiple AI agents for business process optimization.",
+      "description": "Sophisticated multi-agent workflow system built with n8n that orchestrates multiple AI agents to handle complex business automation tasks.",
+      "features": [
+        "Multi-agent coordination and communication",
+        "Dynamic workflow routing based on context",
+        "Integration with multiple APIs and services",
+        "Real-time monitoring and error handling",
+        "Custom node development for specialized tasks",
+        "Scalable agent deployment architecture"
+      ],
+      "challenges": "Coordinating multiple agents and managing complex workflow dependencies.",
+      "solution": "Developed custom orchestration layer with state management and agent communication protocols.",
+      "links":{},
+      "tech":["n8n","Node.js","AI Agents","REST APIs","Webhooks"],
+      "tags":["automation","AI","workflow","integration"]
     },
     {
       "title":"Les Femmes App",
@@ -124,23 +143,6 @@
       "links":{},
       "tech":["React Native"],
       "tags":["mobile","ecommerce"]
-    },
-    {
-      "title":"eCommerce Platform",
-      "summary":"React Native interface enhancements with backend product workflow integration.",
-      "description": "Comprehensive eCommerce platform enhancements focusing on user experience and backend integration for improved product workflow management.",
-      "features": [
-        "Enhanced product browsing interface",
-        "Streamlined checkout process",
-        "Real-time inventory tracking",
-        "Advanced search capabilities",
-        "User account management"
-      ],
-      "challenges": "Optimizing performance for large product catalogs.",
-      "solution": "Implemented efficient pagination and caching strategies.",
-      "links":{},
-      "tech":["React Native","Backend APIs"],
-      "tags":["ecommerce","mobile"]
     }
   ],
   "certifications": [
