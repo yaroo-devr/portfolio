@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Globe } from "lucide-react";
+import { Award, Globe, ExternalLink } from "lucide-react";
 import contentData from "../content/content.json";
 
 export default function Education() {
@@ -116,11 +116,27 @@ export default function Education() {
                 whileHover={{ scale: 1.02 }}
                 data-testid={`certification-${cert.title.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                <h4 className="text-lg font-semibold mb-2 flex items-center">
-                  <Award className="w-5 h-5 text-electric mr-2" />
-                  {cert.title}
-                </h4>
-                <p className="text-gray-300">{cert.issuer}</p>
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="text-lg font-semibold flex items-center flex-1">
+                    <Award className="w-5 h-5 text-electric mr-2 flex-shrink-0" />
+                    {cert.title}
+                  </h4>
+                  {cert.url && (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-2 p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors flex-shrink-0"
+                      data-testid={`certification-link-${index}`}
+                    >
+                      <ExternalLink className="w-4 h-4 text-electric" />
+                    </a>
+                  )}
+                </div>
+                <p className="text-gray-300 mb-1">{cert.issuer}</p>
+                {cert.description && (
+                  <p className="text-sm text-gray-400">{cert.description}</p>
+                )}
               </motion.div>
             ))}
             

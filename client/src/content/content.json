@@ -159,14 +159,24 @@
       ],
       "challenges": "Creating a seamless matching system between tutors and students with complex form handling.",
       "solution": "Developed comprehensive user flow with role-based registration and intelligent tuition matching algorithms.",
-      "links":{},
+      "links":{"github":"https://github.com/yaroo-devr/tutors-apk-react-native.git"},
       "tech":["React Native","JavaScript","Authentication"],
       "tags":["mobile","education","platform"],
       "image":"@assets/WhatsApp Image 2025-08-27 at 12.00.57_41279caa_1756278883913.jpg"
     }
   ],
   "certifications": [
-    {"title":"Meta React Native","issuer":"Coursera"}
+    {
+      "title":"Meta React Native Specialization",
+      "issuer":"Coursera",
+      "url":"https://coursera.org/share/28fc2b4da92f9ba6845c794dd514422d"
+    },
+    {
+      "title":"Meta Android Developer Professional Certificate",
+      "issuer":"Coursera",
+      "url":"https://coursera.org/share/1815650e1f55180c7c5da467c574a3f2",
+      "description":"12-course professional certificate program"
+    }
   ],
   "languages":[
     {"name":"English","level":"Fluent"},

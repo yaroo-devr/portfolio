@@ -56,6 +56,8 @@ export interface Project {
 export interface Certification {
   title: string;
   issuer: string;
+  url?: string;
+  description?: string;
 }
 
 export interface Language {
