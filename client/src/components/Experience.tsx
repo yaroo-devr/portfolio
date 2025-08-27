@@ -46,16 +46,16 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="relative py-32 bg-gradient-to-b from-charcoal to-space">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="experience" className="relative py-16 md:py-32 bg-gradient-to-b from-charcoal to-space">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-black mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Experience</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto" />
@@ -63,8 +63,8 @@ export default function Experience() {
         
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line" />
+          {/* Vertical Line - Hidden on mobile */}
+          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full timeline-line hidden sm:block" />
           
           <motion.div
             variants={containerVariants}
@@ -75,20 +75,20 @@ export default function Experience() {
             {experience.map((exp, index) => (
               <motion.div
                 key={index}
-                className="relative flex items-center mb-16"
+                className="relative flex items-start md:items-center mb-12 md:mb-16"
                 variants={itemVariants}
               >
                 {/* Timeline Dot */}
                 <motion.div 
-                  className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-electric to-neon rounded-full border-4 border-space z-10"
+                  className="absolute left-2 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-gradient-to-r from-electric to-neon rounded-full border-4 border-space z-10 mt-2 md:mt-0 hidden sm:block"
                   whileInView={{ scale: [0.8, 1.2, 1] }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 />
                 
                 {/* Content */}
-                <div className="w-full lg:w-5/12 lg:pr-8 ml-auto">
+                <div className="w-full md:w-5/12 md:pr-8 md:ml-auto pl-12 md:pl-0">
                   <motion.div 
-                    className="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-300"
+                    className="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 md:p-8 hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.02 }}
                     data-testid={`experience-${exp.company.toLowerCase().replace(/\s+/g, '-')}`}
                   >
@@ -101,10 +101,10 @@ export default function Experience() {
                       </span>
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                    <h4 className="text-lg text-neon font-semibold mb-4">{exp.company}</h4>
+                    <h3 className="text-xl md:text-2xl font-bold mb-2">{exp.role}</h3>
+                    <h4 className="text-base md:text-lg text-neon font-semibold mb-4">{exp.company}</h4>
                     
-                    <ul className="space-y-2 text-gray-300 mb-6">
+                    <ul className="space-y-2 text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
                       {exp.bullets.map((bullet, bulletIndex) => (
                         <motion.li 
                           key={bulletIndex}

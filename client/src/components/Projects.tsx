@@ -122,16 +122,16 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="projects" className="relative py-16 md:py-32">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-6xl font-black mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto" />
@@ -139,7 +139,7 @@ export default function Projects() {
         
         {/* Projects Grid */}
         <motion.div
-          className="grid lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -158,7 +158,7 @@ export default function Projects() {
               data-testid={`project-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {/* Project Preview */}
-              <div className={`relative h-64 bg-gradient-to-br ${getProjectGradient(project.title)} flex items-center justify-center overflow-hidden`}>
+              <div className={`relative h-48 md:h-64 bg-gradient-to-br ${getProjectGradient(project.title)} flex items-center justify-center overflow-hidden`}>
                 {getProjectImage(project.title) ? (
                   <>
                     <img 
@@ -179,9 +179,9 @@ export default function Projects() {
                 )}
               </div>
               
-              <div className="p-8">
+              <div className="p-4 md:p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold">{project.title}</h3>
                   <div className="flex space-x-2">
                     {project.links && project.links.github && (
                       <Github className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
@@ -195,7 +195,7 @@ export default function Projects() {
                   </div>
                 </div>
                 
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-300 mb-4 md:mb-6 text-sm md:text-base">
                   {project.summary}
                 </p>
                 
