@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Eye, Mic, Building, ShoppingBag, GraduationCap } from "lucide-react";
+import { ExternalLink, Github, Eye, Mic, Building, ShoppingBag, GraduationCap, Play } from "lucide-react";
 import ProjectModal from "./ProjectModal";
 import contentData from "../content/content.json";
 import type { Project } from "../content/types";
@@ -9,6 +9,7 @@ import type { Project } from "../content/types";
 import lesFemmesImage from "@assets/53_1756277877520.png";
 import tutorsStudentsImage from "@assets/WhatsApp Image 2025-08-27 at 12.00.57_41279caa_1756278883913.jpg";
 import calculatorImage from "@assets/WhatsApp Image 2025-08-27 at 12.30.35_1f780578_1756279843691.jpg";
+import vapiImage from "@assets/image_1756281358286.png";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -23,6 +24,9 @@ export default function Projects() {
     }
     if (title.includes("Calculator")) {
       return calculatorImage;
+    }
+    if (title.includes("VAPI")) {
+      return vapiImage;
     }
     return null;
   };
@@ -182,7 +186,10 @@ export default function Projects() {
                     {project.links && project.links.github && (
                       <Github className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
                     )}
-                    {project.links && Object.keys(project.links).filter(key => key !== 'github').length > 0 && (
+                    {project.links && project.links.playstore && (
+                      <Play className="w-5 h-5 text-gray-400 hover:text-green-400 transition-colors" />
+                    )}
+                    {project.links && Object.keys(project.links).filter(key => !['github', 'playstore'].includes(key)).length > 0 && (
                       <ExternalLink className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
                     )}
                   </div>

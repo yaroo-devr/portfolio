@@ -87,7 +87,8 @@
       "solution": "Implemented efficient API caching and optimized voice processing pipeline.",
       "links":{},
       "tech":["React Native","GPT-4","VAPI.AI"],
-      "tags":["AI","automation","voice"]
+      "tags":["AI","automation","voice"],
+      "image":"@assets/image_1756281358286.png"
     },
     {
       "title":"React Native Calculator",
@@ -122,7 +123,7 @@
       ],
       "challenges": "Coordinating multiple agents and managing complex workflow dependencies.",
       "solution": "Developed custom orchestration layer with state management and agent communication protocols.",
-      "links":{},
+      "links":{"github":"https://github.com/yaroo-devr/multi-agent-business-analysis-n8n-workflow.git"},
       "tech":["n8n","Node.js","AI Agents","REST APIs","Webhooks"],
       "tags":["automation","AI","workflow","integration"]
     },
@@ -140,7 +141,7 @@
       ],
       "challenges": "Creating an intuitive shopping experience with complex product categorization and search functionality.",
       "solution": "Implemented modular component architecture with advanced filtering system and responsive carousel displays.",
-      "links":{},
+      "links":{"playstore":"https://play.google.com/store/apps/details?id=com.lesfemmes"},
       "tech":["React Native","JavaScript","Navigation"],
       "tags":["mobile","ecommerce","fashion"],
       "image":"@assets/53_1756277877520.png"

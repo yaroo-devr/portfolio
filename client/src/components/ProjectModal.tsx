@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { X, Check, Github, ExternalLink } from "lucide-react";
+import { X, Check, Github, ExternalLink, Play } from "lucide-react";
 import type { Project } from "../content/types";
 
 // Import project images
 import lesFemmesImage from "@assets/53_1756277877520.png";
 import tutorsStudentsImage from "@assets/WhatsApp Image 2025-08-27 at 12.00.57_41279caa_1756278883913.jpg";
 import calculatorImage from "@assets/WhatsApp Image 2025-08-27 at 12.30.35_1f780578_1756279843691.jpg";
+import vapiImage from "@assets/image_1756281358286.png";
 
 interface ProjectModalProps {
   project: Project;
@@ -22,6 +23,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     }
     if (title.includes("Calculator")) {
       return calculatorImage;
+    }
+    if (title.includes("VAPI")) {
+      return vapiImage;
     }
     return null;
   };
@@ -89,6 +93,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 >
                   <Github className="w-4 h-4" />
                   <span className="text-sm">GitHub</span>
+                </a>
+              )}
+              {project.links && project.links.playstore && (
+                <a
+                  href={project.links.playstore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-green-700 hover:bg-green-600 px-4 py-2 rounded-lg transition-colors"
+                  data-testid="link-playstore"
+                >
+                  <Play className="w-4 h-4" />
+                  <span className="text-sm">Play Store</span>
                 </a>
               )}
               {!getProjectImage(project.title) && (
