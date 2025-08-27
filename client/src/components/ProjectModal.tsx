@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
-import { X, Check } from "lucide-react";
+import { X, Check, Github, ExternalLink } from "lucide-react";
 import type { Project } from "../content/types";
+
+// Import project images
+import lesFemmesImage from "@assets/53_1756277877520.png";
+import tutorsStudentsImage from "@assets/WhatsApp Image 2025-08-27 at 12.00.57_41279caa_1756278883913.jpg";
+import calculatorImage from "@assets/WhatsApp Image 2025-08-27 at 12.30.35_1f780578_1756279843691.jpg";
 
 interface ProjectModalProps {
   project: Project;
@@ -8,6 +13,19 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const getProjectImage = (title: string) => {
+    if (title.includes("Les Femmes")) {
+      return lesFemmesImage;
+    }
+    if (title.includes("Tutors-Students")) {
+      return tutorsStudentsImage;
+    }
+    if (title.includes("Calculator")) {
+      return calculatorImage;
+    }
+    return null;
+  };
+
   const getTechColors = () => {
     const colors = [
       "bg-blue-500/20 text-blue-300",
@@ -37,17 +55,53 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         onClick={(e) => e.stopPropagation()}
         data-testid="project-modal-content"
       >
-        <div className="p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-3xl font-bold">{project.title}</h3>
+        {/* Project Image Header */}
+        {getProjectImage(project.title) && (
+          <div className="relative h-64 overflow-hidden rounded-t-2xl">
+            <img 
+              src={getProjectImage(project.title)!} 
+              alt={project.title}
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/70 to-transparent" />
             <button
               onClick={onClose}
-              className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 w-10 h-10 bg-charcoal/80 hover:bg-charcoal/90 rounded-full flex items-center justify-center transition-colors backdrop-blur-md"
               data-testid="button-close-modal"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
+          </div>
+        )}
+        
+        <div className="p-8">
+          <div className={`flex items-center justify-between mb-6 ${!getProjectImage(project.title) ? '' : '-mt-4'}`}>
+            <h3 className="text-3xl font-bold">{project.title}</h3>
+            <div className="flex items-center gap-3">
+              {project.links && project.links.github && (
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-lg transition-colors"
+                  data-testid="link-github"
+                >
+                  <Github className="w-4 h-4" />
+                  <span className="text-sm">GitHub</span>
+                </a>
+              )}
+              {!getProjectImage(project.title) && (
+                <button
+                  onClick={onClose}
+                  className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-colors"
+                  data-testid="button-close-modal"
+                  aria-label="Close modal"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              )}
+            </div>
           </div>
           
           <div className="space-y-6">

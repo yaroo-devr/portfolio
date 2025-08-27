@@ -47,9 +47,10 @@ export interface Project {
   features?: string[];
   challenges?: string;
   solution?: string;
-  links: Record<string, string>;
+  links: Record<string, string | undefined>;
   tech: string[];
   tags: string[];
+  image?: string;
 }
 
 export interface Certification {

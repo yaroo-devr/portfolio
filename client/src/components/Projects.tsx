@@ -1,13 +1,31 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, Eye, Mic, Building, ShoppingBag } from "lucide-react";
+import { ExternalLink, Github, Eye, Mic, Building, ShoppingBag, GraduationCap } from "lucide-react";
 import ProjectModal from "./ProjectModal";
 import contentData from "../content/content.json";
 import type { Project } from "../content/types";
 
+// Import project images
+import lesFemmesImage from "@assets/53_1756277877520.png";
+import tutorsStudentsImage from "@assets/WhatsApp Image 2025-08-27 at 12.00.57_41279caa_1756278883913.jpg";
+import calculatorImage from "@assets/WhatsApp Image 2025-08-27 at 12.30.35_1f780578_1756279843691.jpg";
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const { projects } = contentData;
+
+  const getProjectImage = (title: string) => {
+    if (title.includes("Les Femmes")) {
+      return lesFemmesImage;
+    }
+    if (title.includes("Tutors-Students")) {
+      return tutorsStudentsImage;
+    }
+    if (title.includes("Calculator")) {
+      return calculatorImage;
+    }
+    return null;
+  };
 
   const getProjectIcon = (title: string) => {
     const iconProps = { className: "w-16 h-16" };
@@ -26,6 +44,9 @@ export default function Projects() {
     }
     if (title.includes("Les Femmes")) {
       return <ShoppingBag {...iconProps} className="w-16 h-16 text-pink-400" />;
+    }
+    if (title.includes("Tutors-Students")) {
+      return <GraduationCap {...iconProps} className="w-16 h-16 text-green-400" />;
     }
     return <Eye {...iconProps} className="w-16 h-16 text-electric" />;
   };
@@ -133,20 +154,36 @@ export default function Projects() {
               data-testid={`project-${project.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {/* Project Preview */}
-              <div className={`relative h-64 bg-gradient-to-br ${getProjectGradient(project.title)} flex items-center justify-center`}>
-                {getProjectIcon(project.title)}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
+              <div className={`relative h-64 bg-gradient-to-br ${getProjectGradient(project.title)} flex items-center justify-center overflow-hidden`}>
+                {getProjectImage(project.title) ? (
+                  <>
+                    <img 
+                      src={getProjectImage(project.title)!} 
+                      alt={project.title}
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent" />
+                    <div className="absolute bottom-4 right-4">
+                      {getProjectIcon(project.title)}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {getProjectIcon(project.title)}
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
+                  </>
+                )}
               </div>
               
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-2xl font-bold">{project.title}</h3>
                   <div className="flex space-x-2">
-                    {Object.keys(project.links).length > 0 && (
-                      <>
-                        <ExternalLink className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
-                        <Github className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
-                      </>
+                    {project.links && project.links.github && (
+                      <Github className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
+                    )}
+                    {project.links && Object.keys(project.links).filter(key => key !== 'github').length > 0 && (
+                      <ExternalLink className="w-5 h-5 text-gray-400 hover:text-electric transition-colors" />
                     )}
                   </div>
                 </div>
