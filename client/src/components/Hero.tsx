@@ -31,12 +31,12 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-space via-charcoal to-space" />
 
       {/* Split Screen Layout */}
-      <div className="relative z-50 w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center justify-center min-h-screen py-20 lg:py-0">
+      <div className="relative z-50 w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center justify-center min-h-screen pt-24 md:pt-32 pb-16">
         {/* Left Content - Always first on mobile, first on desktop */}
         <motion.div
           className="space-y-6 md:space-y-8 flex flex-col justify-center order-1 w-full z-50"
@@ -115,7 +115,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            className="flex space-x-6 pt-4"
+            className="flex space-x-8 pt-6 pb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
@@ -126,7 +126,7 @@ export default function Hero() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-electric transition-colors duration-300"
+                className="text-gray-400 hover:text-electric transition-colors duration-300 p-2 rounded-lg hover:bg-gray-800/50"
                 whileHover={{ scale: 1.1, y: -2 }}
                 data-testid={`link-${social.label.toLowerCase()}`}
               >
