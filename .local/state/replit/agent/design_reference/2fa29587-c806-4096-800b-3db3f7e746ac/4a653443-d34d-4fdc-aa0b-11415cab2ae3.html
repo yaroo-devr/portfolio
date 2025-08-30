@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yar Muhammad - Software Engineer & Automation Specialist</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Yar Muhammad - Software Engineer specializing in React Native, automation workflows, and AI integration. Building cross-platform mobile apps and intelligent systems.">
+    <meta name="keywords" content="Software Engineer, React Native, Automation, AI, Mobile Development, Python, JavaScript">
+    <meta name="author" content="Yar Muhammad">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Yar Muhammad - Software Engineer & Automation Specialist">
+    <meta property="og:description" content="Building cross-platform mobile apps and intelligent automation workflows">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yarmuhammad.dev">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    colors: {
+                        'space': '#0a0a0a',
+                        'charcoal': '#1a1a1a',
+                        'electric': '#00d4ff',
+                        'neon': '#a855f7'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'glitch': 'glitch 2s infinite',
+                        'particle': 'particle 20s linear infinite'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom animations and effects */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            10% { transform: translate(-2px, -2px); }
+            20% { transform: translate(2px, 2px); }
+            30% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            50% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            70% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            90% { transform: translate(-2px, -2px); }
+        }
+        
+        @keyframes particle {
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity: 0; }
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: linear-gradient(45deg, #00d4ff, #a855f7);
+            border-radius: 50%;
+            animation: particle 20s linear infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: -2s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: -4s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: -6s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: -8s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: -10s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: -12s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: -14s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: -16s; }
+        
+        .grain-overlay {
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        
+        .magnetic-btn {
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .magnetic-btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+        
+        .project-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px rgba(168, 85, 247, 0.3);
+        }
+        
+        .glitch-text {
+            position: relative;
+        }
+        
+        .glitch-text:before,
+        .glitch-text:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text:before {
+            animation: glitch 2s infinite;
+            color: #00d4ff;
+            z-index: -1;
+        }
+        
+        .glitch-text:after {
+            animation: glitch 2s infinite reverse;
+            color: #a855f7;
+            z-index: -2;
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #00d4ff, #a855f7);
+        }
+        
+        .modal-overlay {
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .scroll-progress {
+            background: linear-gradient(90deg, #00d4ff, #a855f7);
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00d4ff, #a855f7);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-space text-white font-sans overflow-x-hidden">
+    <!-- Particle Background -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Grain Overlay -->
+    <div class="fixed inset-0 grain-overlay pointer-events-none z-10 opacity-20"></div>
+    
+    <!-- @COMPONENT: Navigation [sticky header with progress indicator] -->
+    <nav class="fixed top-0 w-full z-50 bg-space/80 backdrop-blur-md border-b border-gray-800">
+        <div class="scroll-progress fixed top-0 left-0 h-1 z-50" style="width: 25%"></div>
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="font-mono text-electric font-bold text-xl">YM</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-electric transition-colors duration-300">About</a>
+                    <a href="#skills" class="hover:text-electric transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="hover:text-electric transition-colors duration-300">Experience</a>
+                    <a href="#projects" class="hover:text-electric transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="hover:text-electric transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+    
+    <!-- @COMPONENT: Hero [cinematic split-screen with parallax] -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-gradient-to-br from-space via-charcoal to-space"></div>
+        
+        <!-- Split Screen Layout -->
+        <div class="relative z-20 w-full max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+            <!-- Left Content -->
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <p class="font-mono text-electric text-sm uppercase tracking-wider">
+                        👋 Hello, I'm
+                    </p>
+                    <h1 class="text-6xl md:text-7xl lg:text-8xl font-black leading-none">
+                        <span class="glitch-text" data-text="Yar">Yar</span><br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">
+                            Muhammad
+                        </span>
+                    </h1>
+                </div>
+                
+                <div class="space-y-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-300">
+                        Software Engineer & Automation Specialist
+                    </h2>
+                    <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
+                        I build cross-platform mobile apps and intelligent automation workflows that bridge the gap between innovation and implementation.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="magnetic-btn bg-gradient-to-r from-electric to-neon text-space font-semibold px-8 py-4 rounded-full">
+                        View My Work
+                    </button>
+                    <button class="magnetic-btn border-2 border-electric text-electric font-semibold px-8 py-4 rounded-full hover:bg-electric hover:text-space transition-all duration-300">
+                        Download CV
+                    </button>
+                </div>
+                
+                <div class="flex space-x-6 pt-4">
+                    <a href="https://linkedin.com/in/yar-muhammad-90386322a/" class="text-gray-400 hover:text-electric transition-colors duration-300">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://github.com/" class="text-gray-400 hover:text-electric transition-colors duration-300">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="mailto:myar8114@gmail.com" class="text-gray-400 hover:text-electric transition-colors duration-300">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Visual -->
+            <div class="relative">
+                <div class="relative w-full max-w-md mx-auto">
+                    <!-- Floating Elements -->
+                    <div class="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-electric/20 to-neon/20 rounded-full blur-xl animate-float"></div>
+                    <div class="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-neon/20 to-electric/20 rounded-full blur-xl animate-float" style="animation-delay: -3s;"></div>
+                    
+                    <!-- Code Block Mockup -->
+                    <div class="bg-charcoal/80 backdrop-blur-md border border-gray-700 rounded-2xl p-6 shadow-2xl">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <div class="font-mono text-sm space-y-2">
+                            <div class="text-gray-400">// Building the future</div>
+                            <div class="text-electric">const developer = {</div>
+                            <div class="ml-4 text-white">name: <span class="text-green-400">"Yar Muhammad"</span>,</div>
+                            <div class="ml-4 text-white">role: <span class="text-green-400">"Software Engineer"</span>,</div>
+                            <div class="ml-4 text-white">focus: [<span class="text-green-400">"Mobile"</span>, <span class="text-green-400">"AI"</span>, <span class="text-green-400">"Automation"</span>],</div>
+                            <div class="ml-4 text-white">passion: <span class="text-green-400">"Innovation"</span></div>
+                            <div class="text-electric">}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="animate-bounce">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-electric"></i>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+    
+    <!-- @COMPONENT: About [summary and highlights] -->
+    <section id="about" class="relative py-32 bg-gradient-to-b from-space to-charcoal">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black mb-6">
+                    About <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <p class="text-xl leading-relaxed text-gray-300">
+                        As a Software Engineer at MiniByte AI, I specialize in creating cross-platform mobile applications and intelligent automation systems. My expertise spans from React Native development to AI integration, with a passion for building solutions that make complex workflows simple.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-400">
+                        Currently pursuing my Bachelor's in Software Engineering at International Islamic University Islamabad, I combine academic knowledge with hands-on industry experience to deliver cutting-edge mobile and automation solutions.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-black text-electric mb-2">5+</div>
+                        <div class="text-gray-300">Projects</div>
+                    </div>
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-black text-neon mb-2">2+</div>
+                        <div class="text-gray-300">Years Learning</div>
+                    </div>
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-black text-electric mb-2">15+</div>
+                        <div class="text-gray-300">Technologies</div>
+                    </div>
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
+                        <div class="text-3xl font-black text-neon mb-2">3</div>
+                        <div class="text-gray-300">Languages</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About -->
+    
+    <!-- @COMPONENT: Skills [filterable grid with devicons] -->
+    <section id="skills" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black mb-6">
+                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Skills</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto mb-8"></div>
+                
+                <!-- Filter Buttons -->
+                <!-- @FUNCTIONALITY: Skills filtering should work with JavaScript to show/hide skill cards -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="filter-btn active bg-electric text-space px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="all">All</button>
+                    <button class="filter-btn bg-charcoal border border-gray-700 text-gray-300 hover:text-electric hover:border-electric px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn bg-charcoal border border-gray-700 text-gray-300 hover:text-electric hover:border-electric px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="backend">Backend</button>
+                    <button class="filter-btn bg-charcoal border border-gray-700 text-gray-300 hover:text-electric hover:border-electric px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="tools">Tools</button>
+                    <button class="filter-btn bg-charcoal border border-gray-700 text-gray-300 hover:text-electric hover:border-electric px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="automation">Automation</button>
+                    <button class="filter-btn bg-charcoal border border-gray-700 text-gray-300 hover:text-electric hover:border-electric px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="ai">AI</button>
+                    <button class="filter-btn bg-charcoal border border-gray-700 text-gray-300 hover:text-electric hover:border-electric px-6 py-2 rounded-full font-semibold transition-all duration-300" data-filter="crm">CRM</button>
+                </div>
+            </div>
+            
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                <!-- Frontend Skills -->
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="frontend">
+                    <i class="devicon-react-original text-4xl text-blue-400 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">React Native</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="frontend">
+                    <i class="devicon-redux-original text-4xl text-purple-400 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">Redux</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="frontend">
+                    <i class="devicon-javascript-original text-4xl text-yellow-400 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">JavaScript</h3>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="backend">
+                    <i class="devicon-python-original text-4xl text-blue-500 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">Python</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="backend">
+                    <i class="devicon-cplusplus-original text-4xl text-blue-600 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">C++</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="backend">
+                    <i data-lucide="server" class="w-10 h-10 text-green-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">REST APIs</h3>
+                </div>
+                
+                <!-- Tools -->
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="tools">
+                    <i class="devicon-docker-original text-4xl text-blue-500 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">Docker</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="tools">
+                    <i class="devicon-git-original text-4xl text-red-500 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">Git</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="tools">
+                    <i class="devicon-android-original text-4xl text-green-500 mb-4 block"></i>
+                    <h3 class="font-semibold text-white">Android Studio</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="tools">
+                    <i data-lucide="database" class="w-10 h-10 text-orange-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">Airtable</h3>
+                </div>
+                
+                <!-- Automation -->
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="automation">
+                    <i data-lucide="workflow" class="w-10 h-10 text-purple-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">n8n</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="automation">
+                    <i data-lucide="zap" class="w-10 h-10 text-yellow-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">Make</h3>
+                </div>
+                
+                <!-- AI -->
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="ai">
+                    <i data-lucide="brain" class="w-10 h-10 text-green-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">GPT-4</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-electric" data-group="ai">
+                    <i data-lucide="mic" class="w-10 h-10 text-blue-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">VAPI.AI</h3>
+                </div>
+                
+                <!-- CRM -->
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="crm">
+                    <i data-lucide="users" class="w-10 h-10 text-orange-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">Go High Level</h3>
+                </div>
+                
+                <div class="skill-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-6 text-center transition-all duration-300 hover:border-neon" data-group="crm">
+                    <i data-lucide="building" class="w-10 h-10 text-red-400 mb-4 mx-auto"></i>
+                    <h3 class="font-semibold text-white">Dolibarr CRM</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills -->
+    
+    <!-- @COMPONENT: Experience [animated timeline] -->
+    <section id="experience" class="relative py-32 bg-gradient-to-b from-charcoal to-space">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black mb-6">
+                    My <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Experience</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto"></div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line"></div>
+                
+                <!-- Experience Item -->
+                <div class="relative flex items-center mb-16">
+                    <!-- Timeline Dot -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-electric to-neon rounded-full border-4 border-space z-10"></div>
+                    
+                    <!-- Content -->
+                    <div class="w-full lg:w-5/12 lg:pr-8 ml-auto">
+                        <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm font-mono text-electric">July 2024 - Present</span>
+                                <span class="px-3 py-1 bg-electric/20 text-electric rounded-full text-xs font-semibold">Current</span>
+                            </div>
+                            
+                            <h3 class="text-2xl font-bold mb-2">React Native Developer Intern</h3>
+                            <h4 class="text-lg text-neon font-semibold mb-4">MiniByte AI</h4>
+                            
+                            <ul class="space-y-2 text-gray-300 mb-6">
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="w-4 h-4 text-electric mt-1 mr-2 flex-shrink-0"></i>
+                                    Developed and maintained cross-platform mobile apps for healthcare, eCommerce, and productivity.
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="w-4 h-4 text-electric mt-1 mr-2 flex-shrink-0"></i>
+                                    Integrated GPT-4 and VAPI.AI to build intelligent voice assistants for real-time call handling.
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="w-4 h-4 text-electric mt-1 mr-2 flex-shrink-0"></i>
+                                    Built automation workflows using n8n and Make (Integromat) for CRM/API integrations.
+                                </li>
+                                <li class="flex items-start">
+                                    <i data-lucide="check" class="w-4 h-4 text-electric mt-1 mr-2 flex-shrink-0"></i>
+                                    Implemented image processing automation using Python.
+                                </li>
+                            </ul>
+                            
+                            <!-- Tech Stack -->
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">React Native</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">GPT-4</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">VAPI.AI</span>
+                                <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-xs">Python</span>
+                                <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs">n8n</span>
+                                <span class="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full text-xs">Make</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Experience -->
+    
+    <!-- @COMPONENT: Projects [hover video preview with modals] -->
+    <section id="projects" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black mb-6">
+                    Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Projects</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto"></div>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 hover:border-neon cursor-pointer" data-project="eyescan">
+                    <!-- Mockup video preview area -->
+                    <div class="relative h-64 bg-gradient-to-br from-blue-900/30 to-purple-900/30 flex items-center justify-center">
+                        <i data-lucide="eye" class="w-16 h-16 text-electric"></i>
+                        <!-- TODO: Implement video preview on hover -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">EyeScan App</h3>
+                            <div class="flex space-x-2">
+                                <i data-lucide="external-link" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                                <i data-lucide="github" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-6">
+                            Image capture app with watermark/logo overlay, sharing, and email functionality built for healthcare imaging solutions.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Python (Pillow)</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">mobile</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">healthcare</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">imaging</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 hover:border-electric cursor-pointer" data-project="vapi">
+                    <div class="relative h-64 bg-gradient-to-br from-green-900/30 to-blue-900/30 flex items-center justify-center">
+                        <i data-lucide="mic" class="w-16 h-16 text-neon"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">VAPI Voice Assistant</h3>
+                            <div class="flex space-x-2">
+                                <i data-lucide="external-link" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                                <i data-lucide="github" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-6">
+                            Advanced voice assistant for smart scheduling using GPT-4 and VAPI.AI for natural language processing and real-time interactions.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">GPT-4</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs">VAPI.AI</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">AI</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">automation</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">voice</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 hover:border-neon cursor-pointer" data-project="dolibarr">
+                    <div class="relative h-64 bg-gradient-to-br from-red-900/30 to-orange-900/30 flex items-center justify-center">
+                        <i data-lucide="building" class="w-16 h-16 text-orange-400"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">Dolibarr External Form</h3>
+                            <div class="flex space-x-2">
+                                <i data-lucide="external-link" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                                <i data-lucide="github" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-6">
+                            Custom UI external form with seamless Dolibarr CRM integration for enhanced customer data collection and management.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">React</span>
+                            <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-xs">Dolibarr CRM</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">REST APIs</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">crm</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">integration</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">web</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden transition-all duration-500 hover:border-electric cursor-pointer" data-project="ecommerce">
+                    <div class="relative h-64 bg-gradient-to-br from-purple-900/30 to-pink-900/30 flex items-center justify-center">
+                        <i data-lucide="shopping-bag" class="w-16 h-16 text-pink-400"></i>
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">eCommerce Platform</h3>
+                            <div class="flex space-x-2">
+                                <i data-lucide="external-link" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                                <i data-lucide="github" class="w-5 h-5 text-gray-400 hover:text-electric transition-colors"></i>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-6">
+                            React Native interface enhancements with backend product workflow integration for improved user experience and functionality.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-xs">Backend APIs</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">ecommerce</span>
+                            <span class="px-2 py-1 bg-gray-700 text-gray-300 rounded text-xs">mobile</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects -->
+    
+    <!-- @COMPONENT: Education [animated cards] -->
+    <section class="relative py-32 bg-gradient-to-b from-charcoal to-space">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black mb-6">
+                    Education & <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Certifications</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Education -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold mb-6 text-electric">Education</h3>
+                    
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex-1">
+                                <h4 class="text-xl font-semibold mb-2">Bachelors - Software Engineering</h4>
+                                <p class="text-gray-300">International Islamic University Islamabad</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="px-3 py-1 bg-electric/20 text-electric rounded-full text-sm">Current</span>
+                                <p class="text-sm text-gray-400 mt-2">Sep 2022 - Present</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="flex-1">
+                                <h4 class="text-xl font-semibold mb-2">F.Sc (Pre-Medical)</h4>
+                                <p class="text-gray-300">FG Quaid e Azam Degree College Chaklala Rawalpindi</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">Completed</span>
+                                <p class="text-sm text-gray-400 mt-2">Jul 2019 - Jun 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications & Languages -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold mb-6 text-neon">Certifications & Languages</h3>
+                    
+                    <!-- Certification -->
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+                        <h4 class="text-lg font-semibold mb-2 flex items-center">
+                            <i data-lucide="award" class="w-5 h-5 text-electric mr-2"></i>
+                            Meta React Native
+                        </h4>
+                        <p class="text-gray-300">Coursera</p>
+                    </div>
+                    
+                    <!-- Languages -->
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-300">
+                        <h4 class="text-lg font-semibold mb-4 flex items-center">
+                            <i data-lucide="globe" class="w-5 h-5 text-neon mr-2"></i>
+                            Languages
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">English</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Fluent</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Urdu</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Fluent</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-300">Pashto</span>
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Native</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Education -->
+    
+    <!-- @COMPONENT: Contact [email and social links] -->
+    <section id="contact" class="relative py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-6xl font-black mb-6">
+                    Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-neon">Connect</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-electric to-neon mx-auto mb-8"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Ready to build something amazing together? Let's discuss your next project.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="mail" class="w-6 h-6 text-electric mr-4"></i>
+                            <h3 class="text-xl font-semibold">Email</h3>
+                        </div>
+                        <a href="mailto:myar8114@gmail.com" class="text-gray-300 hover:text-electric transition-colors text-lg">
+                            myar8114@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-neon mr-4"></i>
+                            <h3 class="text-xl font-semibold">Location</h3>
+                        </div>
+                        <p class="text-gray-300 text-lg">Rawalpindi, Pakistan</p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6">
+                        <a href="https://linkedin.com/in/yar-muhammad-90386322a/" class="w-12 h-12 bg-charcoal border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-electric hover:border-electric transition-all duration-300">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/" class="w-12 h-12 bg-charcoal border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-electric hover:border-electric transition-all duration-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:myar8114@gmail.com" class="w-12 h-12 bg-charcoal border border-gray-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-electric hover:border-electric transition-all duration-300">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-charcoal/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8">
+                    <!-- TODO: Implement contact form submission -->
+                    <form class="space-y-6" data-implementation="Contact form should integrate with email service">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-gray-300">First Name</label>
+                                <input type="text" class="w-full bg-space border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electric transition-colors" data-mock="true" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2 text-gray-300">Last Name</label>
+                                <input type="text" class="w-full bg-space border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electric transition-colors" data-mock="true" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
+                            <input type="email" class="w-full bg-space border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electric transition-colors" data-mock="true" placeholder="john@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Subject</label>
+                            <input type="text" class="w-full bg-space border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electric transition-colors" data-mock="true" placeholder="Project Collaboration">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold mb-2 text-gray-300">Message</label>
+                            <textarea rows="4" class="w-full bg-space border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-electric transition-colors resize-none" data-mock="true" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="magnetic-btn w-full bg-gradient-to-r from-electric to-neon text-space font-semibold py-4 rounded-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact -->
+    
+    <!-- @COMPONENT: Footer [minimal with social icons and back-to-top] -->
+    <footer class="relative py-16 bg-gradient-to-t from-charcoal to-space border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="font-mono text-electric font-bold text-2xl mb-2">YM</div>
+                    <p class="text-gray-400">© 2024 Yar Muhammad. All rights reserved.</p>
+                </div>
+                
+                <div class="flex items-center space-x-8">
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com/in/yar-muhammad-90386322a/" class="text-gray-400 hover:text-electric transition-colors duration-300">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/" class="text-gray-400 hover:text-electric transition-colors duration-300">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:myar8114@gmail.com" class="text-gray-400 hover:text-electric transition-colors duration-300">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    
+                    <button onclick="scrollToTop()" class="w-10 h-10 bg-electric/20 border border-electric rounded-full flex items-center justify-center text-electric hover:bg-electric hover:text-space transition-all duration-300">
+                        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+    
+    <!-- Project Modal -->
+    <!-- @COMPONENT: Modal [project detail overlay] -->
+    <div id="projectModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 invisible transition-all duration-300">
+        <div class="bg-charcoal border border-gray-700 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 id="modalTitle" class="text-3xl font-bold">Project Title</h3>
+                    <button onclick="closeModal()" class="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center transition-colors">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                
+                <div id="modalContent" class="space-y-6">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Modal -->
+    
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scroll progress
+        (function() {
+            const progressBar = document.querySelector('.scroll-progress');
+            
+            function updateScrollProgress() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollProgress = (scrollTop / scrollHeight) * 100;
+                
+                if (progressBar) {
+                    progressBar.style.width = `${Math.min(scrollProgress, 100)}%`;
+                }
+            }
+            
+            window.addEventListener('scroll', updateScrollProgress);
+            updateScrollProgress(); // Initial call
+        })();
+        
+        // Skills filtering
+        (function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const skillCards = document.querySelectorAll('.skill-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-electric', 'text-space');
+                        b.classList.add('bg-charcoal', 'border-gray-700', 'text-gray-300');
+                    });
+                    this.classList.add('active', 'bg-electric', 'text-space');
+                    this.classList.remove('bg-charcoal', 'border-gray-700', 'text-gray-300');
+                    
+                    // Filter skills
+                    skillCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-group') === filter) {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        } else {
+                            card.style.opacity = '0.3';
+                            card.style.transform = 'scale(0.8)';
+                        }
+                    });
+                });
+            });
+        })();
+        
+        // Project modals
+        (function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+            
+            const projectData = {
+                eyescan: {
+                    title: 'EyeScan App',
+                    description: 'A comprehensive image capture application designed for healthcare imaging solutions with advanced watermark and logo overlay capabilities.',
+                    features: [
+                        'Real-time image capture with camera integration',
+                        'Dynamic watermark and logo overlay system',
+                        'Email functionality for instant sharing',
+                        'Image processing with Python Pillow library',
+                        'Healthcare-compliant image handling'
+                    ],
+                    tech: ['React Native', 'Python (Pillow)', 'Camera API', 'Email Integration'],
+                    challenges: 'Implementing real-time image processing while maintaining app performance.',
+                    solution: 'Optimized image processing pipeline using Python backend services.'
+                },
+                vapi: {
+                    title: 'VAPI Voice Assistant',
+                    description: 'An intelligent voice assistant system that leverages GPT-4 and VAPI.AI for natural language processing and smart scheduling capabilities.',
+                    features: [
+                        'Natural language processing with GPT-4',
+                        'Real-time voice interaction via VAPI.AI',
+                        'Smart scheduling and appointment management',
+                        'Context-aware conversation handling',
+                        'Integration with calendar systems'
+                    ],
+                    tech: ['React Native', 'GPT-4', 'VAPI.AI', 'Natural Language Processing', 'Calendar APIs'],
+                    challenges: 'Creating seamless voice interactions with minimal latency.',
+                    solution: 'Implemented efficient API caching and optimized voice processing pipeline.'
+                }
+            };
+            
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const projectKey = this.getAttribute('data-project');
+                    const project = projectData[projectKey];
+                    
+                    if (project) {
+                        modalTitle.textContent = project.title;
+                        modalContent.innerHTML = `
+                            <p class="text-gray-300 text-lg leading-relaxed">${project.description}</p>
+                            
+                            <div>
+                                <h4 class="text-xl font-semibold text-electric mb-4">Key Features</h4>
+                                <ul class="space-y-2">
+                                    ${project.features.map(feature => `
+                                        <li class="flex items-start">
+                                            <i data-lucide="check" class="w-4 h-4 text-electric mt-1 mr-2 flex-shrink-0"></i>
+                                            <span class="text-gray-300">${feature}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-semibold text-neon mb-4">Technologies Used</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    ${project.tech.map(tech => `
+                                        <span class="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">${tech}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-lg font-semibold text-orange-400 mb-2">Challenge</h4>
+                                    <p class="text-gray-300">${project.challenges}</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-green-400 mb-2">Solution</h4>
+                                    <p class="text-gray-300">${project.solution}</p>
+                                </div>
+                            </div>
+                        `;
+                        
+                        modal.classList.remove('opacity-0', 'invisible');
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Reinitialize icons in modal content
+                        lucide.createIcons();
+                    }
+                });
+            });
+        })();
+        
+        // Modal controls
+        window.closeModal = function() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = 'auto';
+        };
+        
+        // Back to top
+        window.scrollToTop = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+        
+        // Close modal on backdrop click
+        document.getElementById('projectModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Prefers reduced motion fallback
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.scrollBehavior = 'auto';
+            // Disable animations for accessibility
+            const style = document.createElement('style');
+            style.textContent = `
+                *, *::before, *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // TODO: Implement business logic for:
+        // - Contact form submission
+        // - Project video previews
+        // - Advanced scroll animations with Framer Motion
+        // - Lenis smooth scrolling library integration
+        // - Dynamic content loading from content.json
+        // - SEO meta tag updates for different sections
+    </script>
+</body>
+</html>

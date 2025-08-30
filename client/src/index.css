@@ -93,6 +93,81 @@
     box-shadow: 0 30px 60px rgba(168, 85, 247, 0.3);
   }
 
+  /* Ensure Hello I'm text is always visible */
+  .text-electric {
+    color: var(--electric) !important;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 999 !important;
+  }
+
+  /* Additional responsive fixes for hero text */
+  @media (min-width: 1024px) {
+    .text-electric {
+      text-shadow: 0 0 15px rgba(0, 212, 255, 0.7);
+      font-size: 1.25rem !important;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .text-electric {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .text-electric {
+      font-size: 1.75rem !important;
+    }
+  }
+
+  /* Ensure email text fits properly in boxes */
+  .break-all {
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  /* Smooth scroll progress animation */
+  .scroll-progress {
+    background: linear-gradient(90deg, var(--electric), var(--neon));
+    transform-origin: left center;
+    will-change: transform, width;
+  }
+
+  /* Single line email styling */
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+
+  /* Email container improvements */
+  [data-testid="contact-email"] a {
+    min-width: 0;
+    overflow: visible !important;
+    text-overflow: unset !important;
+  }
+
+  /* Responsive email text sizing */
+  @media (max-width: 640px) {
+    [data-testid="contact-email"] a {
+      font-size: 0.75rem !important;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    [data-testid="contact-email"] a {
+      font-size: 0.875rem !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    [data-testid="contact-email"] a {
+      font-size: 1rem !important;
+    }
+  }
+
   .glitch-text {
     position: relative;
   }

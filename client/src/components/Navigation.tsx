@@ -25,35 +25,39 @@ export default function Navigation() {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
-    
+
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
   return (
     <>
       <nav className="fixed top-0 w-full z-50 bg-space/80 backdrop-blur-md border-b border-gray-800">
-        <div 
-          className="scroll-progress fixed top-0 left-0 h-1 z-50 transition-all duration-300"
-          style={{ width: `${scrollProgress}%` }}
+        <div
+          className="scroll-progress fixed top-0 left-0 h-1 z-50 transition-transform duration-75 ease-out"
+          style={{
+            width: `${scrollProgress}%`,
+            transformOrigin: "left center",
+            willChange: "transform, width",
+          }}
         />
-        
+
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <motion.div 
+            <motion.div
               className="font-mono text-electric font-bold text-xl cursor-pointer"
               whileHover={{ scale: 1.05 }}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               data-testid="logo"
             >
               YM
             </motion.div>
-            
+
             <div className="hidden md:flex space-x-8">
               {navItems.map((item) => (
                 <motion.button
@@ -67,8 +71,8 @@ export default function Navigation() {
                 </motion.button>
               ))}
             </div>
-            
-            <button 
+
+            <button
               className="md:hidden p-2"
               onClick={() => setIsOpen(!isOpen)}
               data-testid="mobile-menu-toggle"
@@ -87,7 +91,7 @@ export default function Navigation() {
       {/* Mobile Menu */}
       <motion.div
         className={`fixed inset-0 z-40 bg-space/95 backdrop-blur-md md:hidden ${
-          isOpen ? 'block' : 'hidden'
+          isOpen ? "block" : "hidden"
         }`}
         initial={{ opacity: 0 }}
         animate={{ opacity: isOpen ? 1 : 0 }}
