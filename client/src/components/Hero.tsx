@@ -36,17 +36,17 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-space via-charcoal to-space" />
 
       {/* Split Screen Layout */}
-      <div className="relative z-50 w-full max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center justify-center min-h-screen pt-24 md:pt-32 pb-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-2 md:px-3 flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center justify-center min-h-screen pt-10 md:pt-20 pb-16">
         {/* Left Content - Always first on mobile, first on desktop */}
         <motion.div
-          className="space-y-6 md:space-y-8 flex flex-col justify-center order-1 w-full z-50"
+          className="space-y-6 md:space-y-8 flex flex-col justify-center order-1 w-full z-10"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="space-y-4 md:space-y-6 mt-4 lg:mt-8">
             <motion.p
-              className="font-mono text-electric text-base md:text-lg lg:text-xl xl:text-2xl uppercase tracking-wider block relative z-50"
+              className="font-mono text-electric text-base md:text-lg lg:text-xl xl:text-2xl uppercase tracking-wider block relative z-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -106,7 +106,24 @@ export default function Hero() {
               View My Work
             </button>
             <button
-              className="magnetic-btn border-2 border-electric text-electric font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-electric hover:text-space transition-all duration-300 text-sm md:text-base"
+              className="magnetic-btn border-2 border-electric font-semibold px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 text-sm md:text-base"
+              style={{
+                color: "var(--electric)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "var(--electric)";
+                e.currentTarget.style.color = "#000000";
+                e.currentTarget.style.transform =
+                  "scale(1.05) translateY(-2px)";
+                e.currentTarget.style.boxShadow =
+                  "0 20px 40px rgba(0, 212, 255, 0.3)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "var(--electric)";
+                e.currentTarget.style.transform = "scale(1) translateY(0)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
               onClick={handleDownloadCV}
               data-testid="button-download-cv"
             >
@@ -138,7 +155,7 @@ export default function Hero() {
 
         {/* Right Visual - Always second on mobile, second on desktop */}
         <motion.div
-          className="relative order-2 w-full z-40"
+          className="relative order-2 w-full z-10"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}

@@ -47,8 +47,8 @@ export default function Navigation() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 py-4 h-16 flex items-center">
+          <div className="flex items-center justify-between w-full">
             <motion.div
               className="font-mono text-electric font-bold text-xl cursor-pointer"
               whileHover={{ scale: 1.05 }}
@@ -58,16 +58,22 @@ export default function Navigation() {
               YM
             </motion.div>
 
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-8 h-10 items-center">
               {navItems.map((item) => (
                 <motion.button
                   key={item.label}
-                  className="hover:text-electric transition-colors duration-300"
+                  className="hover:text-electric transition-all duration-300 relative h-8 flex items-center justify-center px-2"
                   onClick={() => scrollToSection(item.href)}
-                  whileHover={{ y: -2 }}
+                  whileHover={{
+                    y: -2,
+                    transition: { duration: 0.2, ease: "easeOut" },
+                  }}
+                  style={{
+                    transformOrigin: "center center",
+                  }}
                   data-testid={`nav-${item.label.toLowerCase()}`}
                 >
-                  {item.label}
+                  <span className="block whitespace-nowrap">{item.label}</span>
                 </motion.button>
               ))}
             </div>
